@@ -10,9 +10,8 @@ function Country(props) {
 
     return (
         <tr className={selected ? "selected-country" : ""}>
-            <td>{props.country.alpha3Code}</td>
+            <td>{props.country.code}</td>
             <td>{props.country.name}</td>
-            <td>{props.country.capital}</td>
             <td>
                 <Button variant="success" onClick={() => {
                     changeSelected(true);

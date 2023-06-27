@@ -5,22 +5,16 @@ import Button from "react-bootstrap/Button";
 import Country from "./Country";
 
 import "../styles/Countries.css";
+import CountriesList from "./countries-list"
 
 function Countries() {
-    const [countries, setCountries] = React.useState([]);
-    if (!countries.length) {
-        axios.get("http://api.countrylayer.com/v2/all?access_key=6239c1498839036eef66dada4194804c").then(res => {
-            console.log("Countries:", res);
-            setCountries(res.data);
-        })
-    }
+    const [countries, setCountries] = React.useState(CountriesList);
 
     return (
         <Table striped bordered hover className={"countries"}>
             <thead><tr>
                 <th>Code</th>
                 <th>Name</th>
-                <th>Capital</th>
                 <th></th>
             </tr></thead>
             <tbody>
